@@ -13,4 +13,17 @@ To convert a PDF to an image, make a POST request to the `/convert` endpoint wit
 ### Example:
 
 ```bash
-curl -X POST -F 'pdf=@/path/to/your/document.pdf' http://localhost:4000/convert --output output.jpg
+curl -X POST -F 'pdf=@/path/to/your/document.pdf' http://localhost:5001/convert --output output.jpg
+```
+
+## Building and Running with Docker
+
+To build and run the microservice using Docker, follow these steps:
+
+1. Ensure Docker is installed on your system. You can download it from the [Docker website](https://www.docker.com/products/docker-desktop).
+
+2. Build the Docker image by running the following command in your terminal:
+
+```bash
+docker build -t pdf-to-image-microservice .
+docker run -p 5001:5001 pdf-to-image-microservice
